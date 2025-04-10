@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORM WITH CHECKERS </title>
+  <script src="check.js">
+
+  </script>
+</head>
+<body>
+  <h1> This is heading </h1>
+  <form>
+    <label for="name">Enter name </label>
+    <input type="text" id ='name' onblur="changeText()"><br>
+
+    <label for="age">Enter age </label>
+    <input type="text" id="age" onblur="checkAge()"><br>
+
+    <label for="num1" >Enter random num</label>
+    <input type="text" id="num1" onclick="Increase()"><br>
+
+    <label for="num2">Enter random number 2</label>
+    <input type="text" id="num2" onkeypress="Change()"><br> 
+
+    <label for="num3">Enter num3</label>
+    <input type="text" id="num3" onclick="Heading2()"><br>
+
+    <input type="button" value="Increase by hover" onmousemove="Increase()"><br>
+
+    <input type="button" value="num1 decrease" onmouseover="Decrease()"><br>
+
+    <input type="button" value="submit">
+
+
+    
+  </form>
+  <h2></h2>
+  
+</body>
+</html>

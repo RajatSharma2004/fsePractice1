@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="library.js"></script>
+    <script src="data.js"></script>
+    <script>
+        function fun1()
+        {
+            alert("onload event of web page");
+            head1.innerHTML="New Heading";
+            head1.style.color="green";
+            head1.style.backgroundColor="black";    
+        }
+    </script>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        /* h1{
+            color: blue;            //Styling in the html program
+        } */
+    </style>
+
+</head>
+<!--<body onload="fun1()"> event of body tag -->
+<body >
+    
+    <h1 style="color: palevioletred;">Heading One</h1>
+    <h1 id="head1" >Heading One</h1>
+    <p></p>
+    <button onclick="fun1()">Button</button>
+    <h1>Heading Two</h1>
+    <h1>Heading Two</h1>
+    <h1 class="headings">Heading Two</h1>
+    <h2>Heading Two</h2>
+    <h2 class="headings">Heading Three</h2>
+    <h2>Heading Three</h2>
+
+    <button onclick="sum()">SUM</button>
+    <button onclick="sub()">SUB</button>
+
+
+
+
+    <div class="input-container">
+        <label for="username">Enter Username:</label>
+        <input type="text" id="username" placeholder="Type your username" oninput="checkUsername()">
+      </div>
+      <div id="result"></div>
+    
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Events</title>
+    <script>
+        function checkData()
+        {
+            alert("i am called")
+            return false
+        }
+        function checkValue()
+        {
+            alert("check value")
+        }
+        function changeText()
+        {
+            txt3.value=txt2.value
+        }
+        var ctr=0;
+        function changeData()
+        {
+            ctr++
+            txt3.value=ctr
+        }
+    </script>
+</head>
+<body>
+    <h1>using events</h1>
+    <form action="" onsubmit="return checkData()">
+        <input type="text" onblur="checkValue()"><br>
+        <input type="text" id="txt2" onkeypress="changeText()"><br>
+        <input type="text" id="txt3"><br>
+        <input type="text"><br>
+        <input type="button" value="check" onmouseover="changeData()">
+        <input type="button" value="check" onmousemove="changeData()">
+        <input type="submit">
+    </form>
+</body>
+</html>

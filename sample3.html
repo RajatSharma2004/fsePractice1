@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Events</title>
+    <script>
+        function checkData()
+        {
+            alert("i am called")
+            return false
+        }
+        function checkValue()
+        {
+            alert("check value")
+        }
+        function changeText()
+        {
+            txt3.value=txt2.value
+        }
+        var ctr=0;
+        function changeData()
+        {
+            ctr++
+            txt3.value=ctr
+        }//end of function
+        function fun1()
+        {
+            let value=prompt("Enter value :")
+            alert("This is your value : " + value)
+        }//end of function
+        function funExit()
+        {
+            let res =confirm("Are you sure you want to exit ?")
+           // alert(res)
+           if(res==true)
+           {
+            window.close()
+           }
+
+
+        }
+        function funOpen()
+        {
+            window.open("fetchDemo.html")
+        }
+        function funSaveData()
+        {
+            localStorage.setItem("name","Sunil Guleria")
+        }
+        function funGetData()
+        {
+            alert(localStorage.getItem("name"))
+        }
+        function funBack()
+        {
+            window.history.back();
+            
+        }
+        function funForward()
+        {
+            window.history.forward();
+        }
+        function funClose()
+        {
+            window.setTimeout(window.close,5000)
+           // window.close()
+
+        }
+    </script>
+</head>
+<body>
+    <h1>using events</h1>
+    <a href="fetchDemo.html">next page</a>
+    <form action="" onsubmit="return checkData()">
+        <input type="text" onblur="checkValue()"><br>
+        <input type="text" id="txt2" onkeypress="changeText()"><br>
+        <input type="text" id="txt3"><br>
+        <input type="text"><br>
+        <input type="button" value="check" onmouseover="changeData()">
+        <input type="button" value="check" onmousemove="changeData()">
+        <input type="button" value="click me" onclick="fun1()">
+        <input type="button" value="Exit" onclick="funExit()">
+        <input type="button" value="Open" onclick="funOpen()">
+        <input type="button" value="Save Data" onclick="funSaveData()">
+        <input type="button" value="Get Data" onclick="funGetData()"> 
+        <input type="button" value="Back" onclick="funBack()">
+        <input type="button" value="Forward" onclick="funForward()">
+        <input type="button" value="close Window after 5 Seconds" onclick="funClose()">
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+h1{
+  color: blueviolet;              /*style with tag name */
+}
+
+#head1{
+  color: aqua;                    /*style with tag id */
+}
+.headings{
+  color: khaki;
+}

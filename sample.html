@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <script>
+        function sum()
+        {
+            //alert("Hello Sum")
+            var x=document.getElementsByTagName("h1")
+            //alert(x.length)
+            // x[0].innerHTML="I am changed"
+            // x[1].innerHTML="I am changed"
+            num1=parseInt(txt1.value)
+            num2=parseInt(txt2.value)
+            num3=num1+num2
+            txt3.value=num3
+            para1.innerHTML="The sum is " + num3
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Using java script</h1>
+    <p id="para1"></p>
+    <div>
+        <h1>Adding two numbers</h1>
+        <input type="text" id="txt1"><br>
+        <input type="text" id="txt2"> <br>
+        <input type="text" id="txt3"> <br>
+        <input type="button" value="Sum" onclick="sum()">
+        <input type="button" value="Subtract" >
+    </div>
+</body>
+</html>
