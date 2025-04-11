@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <script>
+    let tasks = [];
+
+    function loadUser() {
+      document.getElementById("welcome").innerText = "Welcome, " + localStorage.getItem("user");
+      loadTasks();
+    }
+
+    function addTask() {
+      let task = document.getElementById("taskInput").value;
+      if (task.trim() === "") return;
+
+      tasks.push(task);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      document.getElementById("taskInput").value = "";
+      displayTasks();
+    }
+
+    function loadTasks() {
+      let stored = localStorage.getItem("tasks");
+      if (stored) tasks = JSON.parse(stored);
+      displayTasks();
+    }
+
+    function displayTasks() {
+      let list = document.getElementById("taskList");
+      list.innerHTML = "";
+      tasks.forEach((t, index) => {
+        let li = document.createElement("li");
+        li.innerText = t;
+        li.onclick = () => {
+          if (confirm("Mark this task as done?")) {
+            tasks.splice(index, 1);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            displayTasks();
+          }
+        };
+        li.onmouseover = () => li.style.color = "green";
+        li.onmouseout = () => li.style.color = "black";
+        list.appendChild(li);
+      });
+    }
+
+    function back() {
+      window.history.back();
+    }
+
+    function forward() {
+      window.location.href="profile.html"
+    }
+
+    function closeAfter5s() {
+      alert("Window will close in 5 seconds!");
+      setTimeout(() => window.close(), 5000);
+    }
+
+    function openProfile() {
+      window.open("profile.html");
+    }
+  </script>
+</head>
+<body onload="loadUser()">
+  <h1 id="welcome">Welcome!</h1>
+  <input type="text" id="taskInput" onblur="alert('You left the task input!')">
+  <button onclick="addTask()">Add Task</button>
+  <ul id="taskList"></ul>
+
+  <hr>
+  <button onclick="openProfile()">Open Profile</button>
+  <button onclick="closeAfter5s()">Close in 5 sec</button>
+  <button onclick="back()">Go Back</button>
+  <button onclick="forward()">Go Forward</button>
+</body>
+</html>
